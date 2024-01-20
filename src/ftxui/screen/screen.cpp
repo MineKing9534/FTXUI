@@ -40,6 +40,8 @@
 
 namespace ftxui {
 
+Pixel Pixel::DEFAULT = Pixel();
+
 namespace {
 
 Pixel& dev_null_pixel() {

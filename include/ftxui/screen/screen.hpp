@@ -72,8 +72,6 @@ struct Pixel {
   static Pixel DEFAULT;
 };
 
-Pixel Pixel::DEFAULT = Pixel();
-
 /// @brief Define how the Screen's dimensions should look like.
 /// @ingroup screen
 namespace Dimension {
