@@ -49,7 +49,30 @@ struct Pixel {
   // Colors:
   Color background_color = Color::Default;
   Color foreground_color = Color::Default;
+
+  bool operator ==(const Pixel p) {
+    return blink = p.blink &&
+      bold == p.bold &&
+      dim == p.dim &&
+      inverted == p.inverted &&
+      underlined == p.underlined &&
+      underlined_double == p.underlined_double &&
+      strikethrough == p.strikethrough &&
+      automerge == p.automerge &&
+      hyperlink == p.hyperlink &&
+      character == p.character &&
+      background_color == p.background_color &&
+      foreground_color == p.foreground_color;
+  }
+
+  bool operator !=(const Pixel p) {
+    return !(*this == p);
+  }
+
+  static Pixel DEFAULT;
 };
+
+Pixel Pixel::DEFAULT = Pixel();
 
 /// @brief Define how the Screen's dimensions should look like.
 /// @ingroup screen

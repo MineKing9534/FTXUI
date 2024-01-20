@@ -837,7 +837,10 @@ class CanvasNodeBase : public Node {
     const int x_max = std::min(c.width() / 2, box_.x_max - box_.x_min + 1);
     for (int y = 0; y < y_max; ++y) {
       for (int x = 0; x < x_max; ++x) {
-        screen.PixelAt(box_.x_min + x, box_.y_min + y) = c.GetPixel(x, y);
+        Pixel p = c.GetPixel(x, y);
+        if(p != Pixel::DEFAULT) {
+          screen.PixelAt(box_.x_min + x, box_.y_min + y) = p;
+        }
       }
     }
   }
