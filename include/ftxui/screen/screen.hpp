@@ -51,7 +51,7 @@ struct Pixel {
   Color foreground_color = Color::Default;
 
   bool operator ==(const Pixel p) {
-    return blink = p.blink &&
+    return blink == p.blink &&
       bold == p.bold &&
       dim == p.dim &&
       inverted == p.inverted &&
