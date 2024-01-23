@@ -32,7 +32,8 @@ class CheckboxBase : public ComponentBase, public CheckboxOption {
         *label,
         *checked,
         is_active,
-        is_focused || hovered_,
+        is_focused,
+        hovered_
     };
     auto element = (transform ? transform : CheckboxOption::Simple().transform)(
         entry_state);

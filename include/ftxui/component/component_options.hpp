@@ -26,6 +26,7 @@ struct EntryState {
   bool state;         ///< The state of the button/checkbox/radiobox
   bool active;        ///< Whether the entry is the active one.
   bool focused;       ///< Whether the entry is one focused by the user.
+  bool hovered;       ///< Whether the entry is hovered with the mouse
 };
 
 struct UnderlineOption {

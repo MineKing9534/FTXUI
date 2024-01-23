@@ -42,9 +42,8 @@ class ButtonBase : public ComponentBase, public ButtonOption {
   Element Render() override {
     const bool active = Active();
     const bool focused = Focused();
-    const bool focused_or_hover = focused || mouse_hover_;
 
-    float target = focused_or_hover ? 1.f : 0.f;  // NOLINT
+    float target = focused || mouse_hover_ ? 1.f : 0.f;  // NOLINT
     if (target != animator_background_.to()) {
       SetAnimationTarget(target);
     }
@@ -54,7 +53,8 @@ class ButtonBase : public ComponentBase, public ButtonOption {
         *label,
         false,
         active,
-        focused_or_hover,
+        focused,
+        mouse_hover_
     };
 
     auto element = (transform ? transform : DefaultTransform)  //
